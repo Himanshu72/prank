@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const port = 3000 || process.env.PORT
+const port =process.env.PORT;
 let x=1;
 app.use(express.static('audio'));
 app.get('/', (req, res) => {
