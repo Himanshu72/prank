@@ -36,6 +36,7 @@ const port = process.env.PORT || 3000;
 let x = 1;
 app.use(express.static("audio"));
 app.get("/", (req, res) => {
+  x++;
   res.render("ans", { data: gk, no: 0 });
 });
 app.get("/gk", (req, res) => {
