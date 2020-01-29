@@ -1,0 +1,67 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link
+  href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"
+  rel="stylesheet"
+  id="bootstrap-css"
+/>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<style></style>
+
+<!------ Include the above in your HEAD tag ---------->
+<nav class="navbar" style="background: rgb(252, 69, 124);">
+  <a class="navbar-brand" href="#" style="color: white;">
+    CMAT 2K20 Analysis
+  </a>
+</nav>
+<div class="container">
+  <div class="row" id="gk">
+    <br />
+    <h4>CMAT 2020 GK Answer</h4>
+
+    <%let y=no;%> <% for(var x of data){ %> <% y++ %>
+
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <pre>
+           Question <%=y%> : <%=x[0]%>                     
+                  </pre
+        >
+      </div>
+
+      <!--.panel-heading-->
+
+      <div class="panel-body">
+        <h4>Answer is:<%=x[1]%></h4>
+      </div>
+    </div>
+    <%}%>
+  </div>
+
+  <%let dec=Math.floor(Math.random()*2)%> <%if(y==13){ %> <%if(dec){%>
+  <a href="/gk" style="color: white;">
+    <button class="btn btn-lg btn-success">
+      next
+    </button>
+  </a>
+  <%}else{%>
+  <button class="btn btn-lg btn-success" onclick="fun()">
+    next
+  </button>
+  <script>
+    function fun() {
+      var audio = new Audio("audio1.mp3");
+      audio.play();
+    }
+  </script>
+  <%}%> <%}%> <%if(y==24){ %>
+  <a href="/" style="color: white;">
+    <button class="btn btn-lg btn-success">
+      Back
+    </button>
+  </a>
+  <%}%>
+  <br />
+  <br />
+</div>
+<script></script>
