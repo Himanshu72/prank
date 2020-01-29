@@ -34,17 +34,21 @@ let gk2 = [
 app.set("view engine", "ejs");
 const port = process.env.PORT || 3000;
 let x = 1;
+let z = 1;
+function count() {
+  x++;
+}
 app.use(express.static("audio"));
 app.get("/", (req, res) => {
-  x++;
-  res.render("ans", { data: gk, no: 0 });
+  z++;
+  res.render("ans", { data: gk, no: 0, count: count });
 });
 app.get("/gk", (req, res) => {
   res.render("ans", { data: gk2, no: 13 });
 });
 
 app.get("/count", (req, res) => {
-  res.send("Counter:" + x);
+  res.send("Counter:" + z + "<br> Prank counter :" + x);
 });
 
 app.listen(port, () => console.log(`Example apps listening on port ${port}!`));
